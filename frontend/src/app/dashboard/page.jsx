@@ -1,176 +1,120 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Shield,
-  ScanSearch,
-  Bot,
-  FileText,
-  Settings,
-  LogOut,
-  AlertTriangle,
-  Globe,
-} from "lucide-react";
 
 export default function Dashboard() {
-  const stats = [
-    {
-      title: "Websites Scanned",
-      value: "2,584",
-      icon: Globe,
-    },
-    {
-      title: "Threats Found",
-      value: "148",
-      icon: AlertTriangle,
-    },
-    {
-      title: "OWASP Score",
-      value: "92%",
-      icon: Shield,
-    },
-    {
-      title: "Security Rating",
-      value: "A+",
-      icon: Shield,
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-[#050816] text-white flex">
+    <main className="min-h-screen bg-black text-white">
 
-      {/* Sidebar */}
-      <aside className="w-72 border-r border-white/10 bg-black/20 backdrop-blur-xl p-6">
+      {/* Hero */}
+      <section className="pt-32 pb-16 border-b border-white/10">
 
-        <h1 className="text-3xl font-bold text-orange-500 mb-10">
-          vulNexa
-        </h1>
+        <div className="max-w-7xl mx-auto px-6">
 
-        <nav className="space-y-3">
-
-          <div className="flex items-center gap-3 bg-orange-500/20 p-3 rounded-xl">
-            <Shield size={20} />
-            Dashboard
-          </div>
-
-          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 cursor-pointer">
-            <ScanSearch size={20} />
-            Scan Website
-          </div>
-
-          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 cursor-pointer">
-            <FileText size={20} />
-            Reports
-          </div>
-
-          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 cursor-pointer">
-            <Bot size={20} />
-            AI Assistant
-          </div>
-
-          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5 cursor-pointer">
-            <Settings size={20} />
-            Settings
-          </div>
-
-          <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-red-500/10 cursor-pointer text-red-400">
-            <LogOut size={20} />
-            Logout
-          </div>
-
-        </nav>
-      </aside>
-
-      {/* Main Content */}
-      <main className="flex-1 p-8">
-
-        <div className="mb-10">
-          <h2 className="text-4xl font-bold">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-6xl md:text-7xl font-light tracking-tight"
+          >
             Security Dashboard
-          </h2>
+          </motion.h1>
 
-          <p className="text-gray-400 mt-2">
-            Monitor vulnerabilities and secure your applications.
+          <p className="mt-6 text-zinc-400 text-lg max-w-2xl">
+            Monitor vulnerabilities, track security posture and
+            manage website risks from a single dashboard.
           </p>
+
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid md:grid-cols-4 gap-6">
+      </section>
 
-          {stats.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white/5 border border-white/10 rounded-3xl p-6"
-            >
-              <item.icon
-                className="text-orange-500 mb-4"
-                size={32}
-              />
+      {/* Stats */}
+      <section className="py-16">
 
-              <h3 className="text-gray-400 text-sm">
-                {item.title}
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="grid md:grid-cols-4 gap-6">
+
+            <div className="border border-white/10 rounded-3xl p-8 bg-white/[0.02]">
+              <p className="text-zinc-500">Security Score</p>
+              <h2 className="text-5xl mt-4 font-light">87</h2>
+            </div>
+
+            <div className="border border-white/10 rounded-3xl p-8 bg-white/[0.02]">
+              <p className="text-zinc-500">Active Threats</p>
+              <h2 className="text-5xl mt-4 font-light">12</h2>
+            </div>
+
+            <div className="border border-white/10 rounded-3xl p-8 bg-white/[0.02]">
+              <p className="text-zinc-500">Critical Issues</p>
+              <h2 className="text-5xl mt-4 font-light">3</h2>
+            </div>
+
+            <div className="border border-white/10 rounded-3xl p-8 bg-white/[0.02]">
+              <p className="text-zinc-500">Scans</p>
+              <h2 className="text-5xl mt-4 font-light">48</h2>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* Main Grid */}
+      <section className="pb-20">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="grid lg:grid-cols-2 gap-8">
+
+            {/* Recent Scans */}
+            <div className="border border-white/10 rounded-3xl p-8 bg-white/[0.02]">
+
+              <h3 className="text-2xl font-medium mb-8">
+                Recent Scans
               </h3>
 
-              <p className="text-3xl font-bold mt-2">
-                {item.value}
-              </p>
-            </motion.div>
-          ))}
+              <div className="space-y-4">
 
-        </div>
+                <div className="flex justify-between border-b border-white/10 pb-4">
+                  <span>example.com</span>
+                  <span className="text-zinc-500">High Risk</span>
+                </div>
 
-        {/* Security Score + AI Assistant */}
-        <div className="grid lg:grid-cols-2 gap-8 mt-10">
+                <div className="flex justify-between border-b border-white/10 pb-4">
+                  <span>shop.com</span>
+                  <span className="text-zinc-500">Medium Risk</span>
+                </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-
-            <h3 className="text-2xl font-bold mb-6">
-              Security Score
-            </h3>
-
-            <div className="flex items-center justify-center">
-
-              <div className="w-52 h-52 rounded-full border-8 border-orange-500 flex items-center justify-center">
-
-                <div className="text-center">
-                  <h2 className="text-5xl font-bold">
-                    92
-                  </h2>
-
-                  <p className="text-gray-400">
-                    Excellent
-                  </p>
+                <div className="flex justify-between border-b border-white/10 pb-4">
+                  <span>secureapp.io</span>
+                  <span className="text-zinc-500">Low Risk</span>
                 </div>
 
               </div>
 
             </div>
 
-          </div>
+            {/* AI Insights */}
+            <div className="border border-white/10 rounded-3xl p-8 bg-white/[0.02]">
 
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+              <h3 className="text-2xl font-medium mb-8">
+                AI Security Insights
+              </h3>
 
-            <h3 className="text-2xl font-bold mb-6">
-              AI Security Assistant
-            </h3>
+              <div className="space-y-5 text-zinc-400">
 
-            <div className="space-y-4">
+                <p>• SQL Injection patterns detected.</p>
 
-              <div className="bg-black/30 rounded-xl p-4">
-                <p className="text-orange-400">
-                  How do I fix SQL Injection?
-                </p>
-              </div>
+                <p>• Missing Content-Security-Policy header.</p>
 
-              <div className="bg-black/30 rounded-xl p-4">
-                <p className="text-gray-300">
-                  Use parameterized queries,
-                  prepared statements and input validation
-                  to prevent malicious SQL execution.
-                </p>
+                <p>• Weak password validation flow.</p>
+
+                <p>• Update outdated dependencies.</p>
+
+                <p>• Enable Multi-Factor Authentication.</p>
+
               </div>
 
             </div>
@@ -179,58 +123,73 @@ export default function Dashboard() {
 
         </div>
 
-        {/* Recent Scans */}
-        <div className="mt-10 bg-white/5 border border-white/10 rounded-3xl p-8">
+      </section>
 
-          <h3 className="text-2xl font-bold mb-6">
-            Recent Scans
-          </h3>
+      {/* OWASP Breakdown */}
+      <section className="pb-24">
 
-          <div className="overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-6">
 
-            <table className="w-full">
+          <div className="border border-white/10 rounded-3xl p-10 bg-white/[0.02]">
 
-              <thead>
-                <tr className="text-left text-gray-400 border-b border-white/10">
-                  <th className="pb-4">Website</th>
-                  <th className="pb-4">Status</th>
-                  <th className="pb-4">Risk</th>
-                </tr>
-              </thead>
+            <h3 className="text-3xl font-light mb-10">
+              OWASP Risk Breakdown
+            </h3>
 
-              <tbody>
+            <div className="space-y-8">
 
-                <tr className="border-b border-white/5">
-                  <td className="py-4">amazon.com</td>
-                  <td className="py-4 text-green-400">Safe</td>
-                  <td className="py-4">Low</td>
-                </tr>
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span>A01 Broken Access Control</span>
+                  <span>82%</span>
+                </div>
 
-                <tr className="border-b border-white/5">
-                  <td className="py-4">testsite.com</td>
-                  <td className="py-4 text-yellow-400">
-                    Warning
-                  </td>
-                  <td className="py-4">Medium</td>
-                </tr>
+                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full w-[82%] bg-white"></div>
+                </div>
+              </div>
 
-                <tr>
-                  <td className="py-4">demoapp.com</td>
-                  <td className="py-4 text-red-400">
-                    Critical
-                  </td>
-                  <td className="py-4">High</td>
-                </tr>
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span>A02 Cryptographic Failures</span>
+                  <span>63%</span>
+                </div>
 
-              </tbody>
+                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full w-[63%] bg-white"></div>
+                </div>
+              </div>
 
-            </table>
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span>A03 Injection</span>
+                  <span>71%</span>
+                </div>
+
+                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full w-[71%] bg-white"></div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span>A04 Insecure Design</span>
+                  <span>55%</span>
+                </div>
+
+                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full w-[55%] bg-white"></div>
+                </div>
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
-      </main>
-    </div>
+      </section>
+
+    </main>
   );
 }

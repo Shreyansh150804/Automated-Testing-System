@@ -1,159 +1,230 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Eye, EyeOff, Shield } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function LoginPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const router = useRouter();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Temporary Login
-    router.push("/dashboard");
-  };
-
   return (
-    <div className="min-h-screen bg-[#050816] flex items-center justify-center px-4 py-10">
+    <main className="min-h-screen bg-black text-white overflow-hidden">
+
       {/* Background Glow */}
-      <div className="absolute w-96 h-96 bg-orange-500/20 blur-[120px] rounded-full top-20 left-20"></div>
-      <div className="absolute w-96 h-96 bg-orange-600/10 blur-[120px] rounded-full bottom-20 right-20"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-white/[0.03] blur-[180px] rounded-full pointer-events-none" />
 
-      <div className="relative w-full max-w-6xl grid md:grid-cols-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden">
+      {/* Header */}
+      <header className="relative z-20 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Left Section */}
-        <div className="hidden md:flex flex-col justify-center p-12 bg-gradient-to-br from-orange-500/20 to-transparent">
-
-          <div className="flex items-center gap-3 mb-6">
-            <Shield className="text-orange-500" size={40} />
-            <h1 className="text-4xl font-bold text-white">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-4 h-4 bg-white rotate-45" />
+            <span className="font-medium tracking-wide">
               vulNexa
-            </h1>
-          </div>
+            </span>
+          </Link>
 
-          <h2 className="text-5xl font-bold text-white leading-tight">
-            Welcome
-            <br />
-            Back
-          </h2>
-
-          <p className="text-gray-300 mt-6 text-lg">
-            Access your dashboard, monitor vulnerabilities,
-            and secure your applications with AI-powered insights.
-          </p>
-
-          <div className="mt-10 space-y-4">
-            <div className="text-gray-300">
-              ✓ Website Security Scanning
-            </div>
-
-            <div className="text-gray-300">
-              ✓ AI Security Assistant
-            </div>
-
-            <div className="text-gray-300">
-              ✓ Downloadable Reports
-            </div>
-          </div>
+          <Link
+            href="/signup"
+            className="text-sm text-zinc-400 hover:text-white transition"
+          >
+            Create Account
+          </Link>
 
         </div>
+      </header>
 
-        {/* Right Section */}
-        <div className="p-8 md:p-12">
+      {/* Main */}
+      <section className="relative z-10 min-h-[calc(100vh-64px)] flex items-center justify-center px-6">
 
-          <h2 className="text-3xl font-bold text-white mb-2">
-            Login
-          </h2>
+        <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-20 items-center">
 
-          <p className="text-gray-400 mb-8">
-            Sign in to continue to vulNexa.
-          </p>
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="hidden lg:block"
+          >
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+            <span className="text-zinc-500 uppercase tracking-[0.25em] text-sm">
+              Welcome Back
+            </span>
 
-            <div>
-              <label className="text-gray-300 text-sm">
-                Email Address
-              </label>
+            <h1 className="mt-6 text-7xl font-semibold leading-[0.95] tracking-tight">
+              Security
+              <br />
+              starts here.
+            </h1>
 
-              <input
-                type="email"
-                placeholder="Enter email"
-                className="w-full mt-2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-orange-500"
-              />
+            <p className="mt-8 text-zinc-400 text-lg max-w-lg">
+              Access vulnerability scans, AI-powered analysis,
+              enterprise reports, and real-time security insights
+              from one unified platform.
+            </p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 mt-12">
+
+              <div className="border border-white/10 rounded-2xl p-5 bg-white/[0.02]">
+                <h3 className="text-2xl font-semibold">10+</h3>
+                <p className="text-zinc-500 text-sm mt-1">
+                  OWASP Checks
+                </p>
+              </div>
+
+              <div className="border border-white/10 rounded-2xl p-5 bg-white/[0.02]">
+                <h3 className="text-2xl font-semibold">AI</h3>
+                <p className="text-zinc-500 text-sm mt-1">
+                  Assistant
+                </p>
+              </div>
+
+              <div className="border border-white/10 rounded-2xl p-5 bg-white/[0.02]">
+                <h3 className="text-2xl font-semibold">24/7</h3>
+                <p className="text-zinc-500 text-sm mt-1">
+                  Monitoring
+                </p>
+              </div>
+
             </div>
 
-            <div>
-              <label className="text-gray-300 text-sm">
-                Password
-              </label>
+          </motion.div>
 
-              <div className="relative mt-2">
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="flex justify-center"
+          >
 
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter password"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-orange-500"
-                />
+            <div className="w-full max-w-md">
 
+              <div className="border border-white/10 bg-white/[0.03] backdrop-blur-xl rounded-3xl p-8">
+
+                <h2 className="text-3xl font-semibold">
+                  Log in
+                </h2>
+
+                <p className="mt-2 text-zinc-500">
+                  Continue to your vulNexa workspace.
+                </p>
+
+                {/* Google Button */}
                 <button
-                  type="button"
-                  onClick={() =>
-                    setShowPassword(!showPassword)
-                  }
-                  className="absolute right-4 top-3 text-gray-400"
+                  className="
+                  w-full
+                  mt-8
+                  border
+                  border-white/10
+                  rounded-xl
+                  py-3
+                  hover:bg-white/[0.03]
+                  transition
+                  "
                 >
-                  {showPassword ? (
-                    <EyeOff size={20} />
-                  ) : (
-                    <Eye size={20} />
-                  )}
+                  Continue with Google
                 </button>
 
+                <div className="flex items-center gap-4 my-6">
+                  <div className="h-px flex-1 bg-white/10" />
+                  <span className="text-zinc-500 text-sm">OR</span>
+                  <div className="h-px flex-1 bg-white/10" />
+                </div>
+
+                <form className="space-y-5">
+
+                  <div>
+                    <label className="text-sm text-zinc-400">
+                      Email Address
+                    </label>
+
+                    <input
+                      type="email"
+                      placeholder="john@example.com"
+                      className="
+                      w-full
+                      mt-2
+                      bg-black
+                      border
+                      border-white/10
+                      rounded-xl
+                      px-4
+                      py-3
+                      outline-none
+                      focus:border-white/30
+                      "
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between items-center">
+                      <label className="text-sm text-zinc-400">
+                        Password
+                      </label>
+
+                      <a
+                        href="#"
+                        className="text-sm text-zinc-500 hover:text-white"
+                      >
+                        Forgot Password?
+                      </a>
+                    </div>
+
+                    <input
+                      type="password"
+                      placeholder="••••••••"
+                      className="
+                      w-full
+                      mt-2
+                      bg-black
+                      border
+                      border-white/10
+                      rounded-xl
+                      px-4
+                      py-3
+                      outline-none
+                      focus:border-white/30
+                      "
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="
+                    w-full
+                    py-3
+                    rounded-xl
+                    bg-white
+                    text-black
+                    font-medium
+                    hover:opacity-90
+                    transition
+                    "
+                  >
+                    Log In
+                  </button>
+
+                </form>
+
+                <div className="mt-6 text-center text-sm text-zinc-500">
+                  Don't have an account?{" "}
+                  <Link
+                    href="/signup"
+                    className="text-white hover:underline"
+                  >
+                    Create one
+                  </Link>
+                </div>
+
               </div>
-            </div>
-
-            <div className="flex justify-between text-sm">
-
-              <label className="flex items-center gap-2 text-gray-400">
-                <input type="checkbox" />
-                Remember Me
-              </label>
-
-              <a
-                href="#"
-                className="text-orange-500 hover:text-orange-400"
-              >
-                Forgot Password?
-              </a>
 
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 transition-all py-3 rounded-xl font-semibold text-white"
-            >
-              Login
-            </button>
-
-          </form>
-
-          <p className="text-center text-gray-400 mt-6">
-            Don't have an account?{" "}
-            <Link
-              href="/signup"
-              className="text-orange-500 hover:text-orange-400"
-            >
-              Create Account
-            </Link>
-          </p>
+          </motion.div>
 
         </div>
 
-      </div>
-    </div>
+      </section>
+
+    </main>
   );
 }
