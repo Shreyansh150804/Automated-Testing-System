@@ -2,12 +2,19 @@ const axios = require("axios");
 
 const performScan = async (target) => {
     try {
-        // Target URL validate
-        const url = new URL(target);
+        // Target URL validate and normalization
+        let trimmed = target.trim();
+        if (!/^https?:\/\//i.test(trimmed)) {
+            trimmed = `https://${trimmed}`;
+        }
+        const url = new URL(trimmed);
 
         // Safe HTTP request
         const response = await axios.get(url.toString(), {
             timeout: 10000,
+            headers: {
+                "User-Agent": "OWASP-Automated-Scanner/1.0"
+            },
             validateStatus: () => true
         });
 

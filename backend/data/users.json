@@ -1,0 +1,20 @@
+[
+  {
+    "id": "usr_1791726411355_4rz79f",
+    "name": "Security Admin",
+    "email": "admin@vulnexa.io",
+    "passwordHash": "825361ee3115af25736acbe91706a785f149f1f0e115e2f99f731455e0376ff9f4abdc00c7cfe5c92149b0fc4160ee4f4e051a0cff9b3cc9619ed81f04baf563",
+    "salt": "853f38258a047d3643be2ddbfe4987e3",
+    "createdAt": "2026-10-11T13:46:51.355Z",
+    "updatedAt": "2026-10-11T13:46:51.355Z"
+  },
+  {
+    "id": "usr_1791742050382_nwluac",
+    "name": "Shreyansh Trivedi",
+    "email": "shreyanshtrivedi53@gmail.com",
+    "passwordHash": "153398ab08077710b55528bfb38a8c67abbcf32efd2815aebfa5594d6818ad32f1c482c2633a73cbbc726d73f241879f10b617002d0fda651fc5848364107eec",
+    "salt": "32e7029468621b107bb1eef6da8be34b",
+    "createdAt": "2026-10-11T18:07:30.382Z",
+    "updatedAt": "2026-10-11T18:07:30.382Z"
+  }
+]
