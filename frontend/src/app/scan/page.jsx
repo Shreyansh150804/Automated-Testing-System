@@ -620,7 +620,7 @@ export default function ScanPage() {
 
 
 
-          {/* Error Message */}
+          {/* Error Message */} 
 
           <AnimatePresence>
 

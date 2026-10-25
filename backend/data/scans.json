@@ -1,5 +1,245 @@
 [
   {
+    "id": "scn_1792909918773_knpen3",
+    "scanId": "scn_1792909918773_knpen3",
+    "userId": "usr_1791742050382_nwluac",
+    "target": "https://google.com",
+    "scannedAt": "2026-10-25T06:31:58.773Z",
+    "status": "Scan completed",
+    "statusCode": 200,
+    "scoreDetails": {
+      "score": 75,
+      "label": "Fair Protection",
+      "color": "text-yellow-400",
+      "ringColor": "#eab308",
+      "badgeBg": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
+    },
+    "findings": [
+      {
+        "owasp": "A01:2021 - Broken Access Control",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Access-control behavior cannot be completely verified using a basic external scan.",
+        "recommendation": "Verify authentication and authorization for every protected resource."
+      },
+      {
+        "owasp": "A02:2021 - Cryptographic Failures",
+        "status": "Pass",
+        "severity": "Info",
+        "description": "The target is using HTTPS.",
+        "recommendation": "Continue using HTTPS and modern TLS configuration."
+      },
+      {
+        "owasp": "A03:2021 - Injection",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Injection vulnerabilities require application-level input and code analysis.",
+        "recommendation": "Use parameterized queries, input validation and safe APIs."
+      },
+      {
+        "owasp": "A04:2021 - Insecure Design",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Design-level security cannot be completely determined from HTTP headers.",
+        "recommendation": "Apply threat modeling and security requirements during system design."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Fail",
+        "severity": "Low",
+        "description": "X-Content-Type-Options security header is missing.",
+        "recommendation": "Configure the X-Content-Type-Options security header."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Pass",
+        "severity": "Info",
+        "description": "X-Frame-Options is present.",
+        "recommendation": "Keep the security configuration properly maintained."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Fail",
+        "severity": "Medium",
+        "description": "Content-Security-Policy security header is missing.",
+        "recommendation": "Configure the Content-Security-Policy security header."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Fail",
+        "severity": "Medium",
+        "description": "Strict-Transport-Security security header is missing.",
+        "recommendation": "Configure the Strict-Transport-Security security header."
+      },
+      {
+        "owasp": "A06:2021 - Vulnerable and Outdated Components",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "External HTTP scanning cannot reliably determine all software component versions.",
+        "recommendation": "Keep dependencies updated and regularly check them for known vulnerabilities."
+      },
+      {
+        "owasp": "A07:2021 - Identification and Authentication Failures",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Authentication behavior requires application-specific testing.",
+        "recommendation": "Use strong authentication, secure session management and appropriate access controls."
+      },
+      {
+        "owasp": "A08:2021 - Software and Data Integrity Failures",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Software and data integrity cannot be completely verified through basic HTTP checks.",
+        "recommendation": "Use trusted dependencies, integrity verification and secure deployment processes."
+      },
+      {
+        "owasp": "A09:2021 - Security Logging and Monitoring Failures",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Logging and monitoring configuration is not directly visible through a basic external scan.",
+        "recommendation": "Implement centralized security logging and monitoring."
+      },
+      {
+        "owasp": "A10:2021 - Server-Side Request Forgery",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "SSRF protection requires application-level analysis.",
+        "recommendation": "Validate and restrict server-side outbound requests and allow only trusted destinations."
+      }
+    ],
+    "summary": {
+      "total": 13,
+      "passed": 2,
+      "failed": 3,
+      "manual": 8,
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "low": 1
+    },
+    "createdAt": "2026-10-25T06:31:58.780Z"
+  },
+  {
+    "id": "scn_1792909886307_z1lasa",
+    "scanId": "scn_1792909886307_z1lasa",
+    "userId": "usr_1791742050382_nwluac",
+    "target": "https://google.com",
+    "scannedAt": "2026-10-25T06:31:26.307Z",
+    "status": "Scan completed",
+    "statusCode": 200,
+    "scoreDetails": {
+      "score": 75,
+      "label": "Fair Protection",
+      "color": "text-yellow-400",
+      "ringColor": "#eab308",
+      "badgeBg": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
+    },
+    "findings": [
+      {
+        "owasp": "A01:2021 - Broken Access Control",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Access-control behavior cannot be completely verified using a basic external scan.",
+        "recommendation": "Verify authentication and authorization for every protected resource."
+      },
+      {
+        "owasp": "A02:2021 - Cryptographic Failures",
+        "status": "Pass",
+        "severity": "Info",
+        "description": "The target is using HTTPS.",
+        "recommendation": "Continue using HTTPS and modern TLS configuration."
+      },
+      {
+        "owasp": "A03:2021 - Injection",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Injection vulnerabilities require application-level input and code analysis.",
+        "recommendation": "Use parameterized queries, input validation and safe APIs."
+      },
+      {
+        "owasp": "A04:2021 - Insecure Design",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Design-level security cannot be completely determined from HTTP headers.",
+        "recommendation": "Apply threat modeling and security requirements during system design."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Fail",
+        "severity": "Low",
+        "description": "X-Content-Type-Options security header is missing.",
+        "recommendation": "Configure the X-Content-Type-Options security header."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Pass",
+        "severity": "Info",
+        "description": "X-Frame-Options is present.",
+        "recommendation": "Keep the security configuration properly maintained."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Fail",
+        "severity": "Medium",
+        "description": "Content-Security-Policy security header is missing.",
+        "recommendation": "Configure the Content-Security-Policy security header."
+      },
+      {
+        "owasp": "A05:2021 - Security Misconfiguration",
+        "status": "Fail",
+        "severity": "Medium",
+        "description": "Strict-Transport-Security security header is missing.",
+        "recommendation": "Configure the Strict-Transport-Security security header."
+      },
+      {
+        "owasp": "A06:2021 - Vulnerable and Outdated Components",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "External HTTP scanning cannot reliably determine all software component versions.",
+        "recommendation": "Keep dependencies updated and regularly check them for known vulnerabilities."
+      },
+      {
+        "owasp": "A07:2021 - Identification and Authentication Failures",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Authentication behavior requires application-specific testing.",
+        "recommendation": "Use strong authentication, secure session management and appropriate access controls."
+      },
+      {
+        "owasp": "A08:2021 - Software and Data Integrity Failures",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Software and data integrity cannot be completely verified through basic HTTP checks.",
+        "recommendation": "Use trusted dependencies, integrity verification and secure deployment processes."
+      },
+      {
+        "owasp": "A09:2021 - Security Logging and Monitoring Failures",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "Logging and monitoring configuration is not directly visible through a basic external scan.",
+        "recommendation": "Implement centralized security logging and monitoring."
+      },
+      {
+        "owasp": "A10:2021 - Server-Side Request Forgery",
+        "status": "Manual Review",
+        "severity": "Info",
+        "description": "SSRF protection requires application-level analysis.",
+        "recommendation": "Validate and restrict server-side outbound requests and allow only trusted destinations."
+      }
+    ],
+    "summary": {
+      "total": 13,
+      "passed": 2,
+      "failed": 3,
+      "manual": 8,
+      "critical": 0,
+      "high": 0,
+      "medium": 2,
+      "low": 1
+    },
+    "createdAt": "2026-10-25T06:31:26.320Z"
+  },
+  {
     "id": "scn_1792164976498_sjhoko",
     "scanId": "scn_1792164976498_sjhoko",
     "userId": "usr_1791742050382_nwluac",
